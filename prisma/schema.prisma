@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Devices {
+  id           String         @id @default(uuid())
+  name         String         @unique
+  description  String?
+  createdAt    DateTime       @default(now()) @map("created_at")
+  updatedAt    DateTime       @updatedAt @map("updated_at")
+  data_devices Data_devices[]
+
+  @@map("devices")
+}
+
+model Data_devices {
+  id        String   @id @default(uuid())
+  measures  String
+  axle      String
+  value     Decimal
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  devicesId String   @map("devices_id")
+
+  devices Devices @relation(fields: [devicesId], references: [id])
+
+  @@map("data_devices")
+}
