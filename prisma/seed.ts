@@ -1,4 +1,4 @@
-import { prisma } from "@/prisma";
+import { prisma } from "../src/prisma.ts"
 
 
 async function seed (){
@@ -8,19 +8,19 @@ async function seed (){
                 measures: "FFT",
                 axle: "x",
                 value: 150.5,
-                devicesId: "b073b706-6b64-4d30-ae1e-472b51c6eef0"
+                devicesId: "73456bf1-01db-4172-b474-5ecbeb559f7b"
             },
             {
                 measures: "FFT",
                 axle: "y",
                 value: 180.5,
-                devicesId: "b073b706-6b64-4d30-ae1e-472b51c6eef0"
+                devicesId: "73456bf1-01db-4172-b474-5ecbeb559f7b"
             },
             {
                 measures: "FFT",
                 axle: "Z",
                 value: 160.5,
-                devicesId: "b073b706-6b64-4d30-ae1e-472b51c6eef0"
+                devicesId: "73456bf1-01db-4172-b474-5ecbeb559f7b"
             },
         ]
     })
