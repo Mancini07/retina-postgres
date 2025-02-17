@@ -1,7 +1,9 @@
+import 'module-alias/register';
 import express, {Request, Response, NextFunction} from "express"
 import "express-async-errors"
 import { router } from "./routes"
 import { AppError } from "./utils/AppError"
+
 
 const PORT = 3333
 const app = express()
