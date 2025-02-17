@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "server.ts",
   "scripts": {
-    "dev": "tsx watch src/server.ts"
+    "dev": "tsx watch src/server.ts",
+    "start": "node start.js",
+    "build": "tsc"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
@@ -12,10 +14,14 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  "_moduleAliases": {
+  "@": "./dist"
+  },
   "dependencies": {
     "@prisma/client": "^6.3.1",
     "express": "^4.21.2",
     "express-async-errors": "^3.1.1",
+    "module-alias": "^2.2.3",
     "postgresql": "^0.0.1",
     "prisma": "^6.3.1",
     "tsx": "^4.19.2"

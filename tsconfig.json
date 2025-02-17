@@ -7,6 +7,10 @@
       "@/*": ["./src/*"]
     },
 
+    "outDir": "./dist",
+    "rootDir": "./src",
+ 
+
     "module": "node16",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -14,5 +18,6 @@
     "typeRoots": ["./src/types"],
     "strict": true,
     "skipLibCheck": true
-  }
+  },
+  "exclude": ["prisma/seed.ts"],
 }
